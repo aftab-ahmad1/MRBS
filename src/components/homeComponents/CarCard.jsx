@@ -1,6 +1,4 @@
-import React from "react";
-
-const CarCard = ({ picture,name, type, price, features }) => {
+const CarCard = ({ picture, name, type, price, features }) => {
   return (
     <div className="border rounded-lg shadow-lg p-4 bg-white transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
       {/* Car Image Placeholder */}

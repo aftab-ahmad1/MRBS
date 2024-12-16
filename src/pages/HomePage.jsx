@@ -2,7 +2,6 @@ import CarCard from "../components/homeComponents/CarCard";
 import DownloadAppSection from "../components/homeComponents/DownloadAppSection";
 import FactsSection from "../components/homeComponents/FactsStation";
 import Features from "../components/homeComponents/Features";
-import Header from "../components/Header";
 import HeroSearchSection from "../components/homeComponents/HeroSearchSection";
 import { cars } from "../data/carData";
 import Booking from "../components/homeComponents/Booking";
@@ -10,7 +9,7 @@ import Booking from "../components/homeComponents/Booking";
 const HomePage = () => {
   return (
     <>
-      <Booking/>
+      <Booking />
       <Features />
 
       {/* =================================================================== */}
@@ -42,7 +41,7 @@ const HomePage = () => {
 
       <FactsSection />
       <DownloadAppSection />
-      <HeroSearchSection/>
+      <HeroSearchSection />
     </>
   );
 };

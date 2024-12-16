@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router";
 
 const Header = () => {
@@ -42,19 +42,34 @@ const Header = () => {
 
         {/* Navigation Links - Desktop */}
         <nav className="hidden md:flex md:space-x-8 text-lg">
-          <Link to="/" className="text-gray-800 hover:text-purple-600 font-semibold">
+          <Link
+            to="/"
+            className="text-gray-800 hover:text-purple-600 font-semibold"
+          >
             Home
           </Link>
-          <Link to="vehicles" className="text-gray-800 hover:text-purple-600 font-semibold">
+          <Link
+            to="vehicles"
+            className="text-gray-800 hover:text-purple-600 font-semibold"
+          >
             Vehicles
           </Link>
-          <Link to="details" className="text-gray-800 hover:text-purple-600 font-semibold">
+          <Link
+            to="details"
+            className="text-gray-800 hover:text-purple-600 font-semibold"
+          >
             Details
           </Link>
-          <Link to="about" className="text-gray-800 hover:text-purple-600 font-semibold">
+          <Link
+            to="about"
+            className="text-gray-800 hover:text-purple-600 font-semibold"
+          >
             About Us
           </Link>
-          <Link to="contact" className="text-gray-800 hover:text-purple-600 font-semibold">
+          <Link
+            to="contact"
+            className="text-gray-800 hover:text-purple-600 font-semibold"
+          >
             Contact Us
           </Link>
         </nav>
