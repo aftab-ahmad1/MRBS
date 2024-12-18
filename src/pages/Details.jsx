@@ -1,4 +1,4 @@
-import CarDetails from "../components/detailsComponents/cardetail";
+import CarDetails from "../components/detailsComponents/cardetails";
 import CarCard from "../components/homeComponents/CarCard";
 import { cars } from "../data/carData";
 

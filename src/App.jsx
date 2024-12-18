@@ -7,6 +7,7 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Auth from "./pages/Auth";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/details" element={<Details />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/auth" element={<Auth />} />
       </Routes>
       <Footer />
     </>
