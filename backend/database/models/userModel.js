@@ -57,4 +57,35 @@ module.exports = {
       return { error: error.error[0].message };
     }
   },
+  updateUser: async (userID, body) => {
+    try {
+      const data = await models.users.update(
+        { ...body },
+        {
+          where: {
+            userID: userID,
+          },
+        }
+      );
+      return {
+        data: data,
+      };
+    } catch (error) {
+      return { error: error.error[0].message };
+    }
+  },
+  deleteUser: async (userID) => {
+    try {
+      const data = await models.users.destroy({
+        where: {
+          userID: userID,
+        },
+      });
+      return {
+        data: data,
+      };
+    } catch (error) {
+      return { error: error.error[0].message };
+    }
+  },
 };
