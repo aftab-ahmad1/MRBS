@@ -10,15 +10,17 @@ const create = async (req, res) => {
     const user = await createUser(req.body);
     return responseHandler(res, user);
   } catch (error) {
-    return responseHandler(res, { error: error });
+    return responseHandler(res, { error: error.message });
   }
 };
 const getAll = async (req, res) => {
   try {
-    const user = await getAllUser();
+    const { pageNo, limit } = req.query;
+    const offset = (pageNo - 1) * limit;
+    const user = await getAllUser(offset, req.query);
     return responseHandler(res, user);
   } catch (error) {
-    return responseHandler(res, { error: error });
+    return responseHandler(res, { error: error.message });
   }
 };
 const get = async (req, res) => {
@@ -26,7 +28,7 @@ const get = async (req, res) => {
     const user = await getUser(req.query);
     return responseHandler(res, user);
   } catch (error) {
-    return responseHandler(res, { error: error });
+    return responseHandler(res, { error: error.message });
   }
 };
 const update = (req, res) => {

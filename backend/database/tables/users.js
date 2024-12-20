@@ -30,6 +30,10 @@ users.init(
       type: DataTypes.STRING(1000),
       allowNull: false,
     },
+    CNIC: {
+      type: DataTypes.STRING(15),
+      //allowNull: false,
+    },
   },
   {
     paranoid: true,

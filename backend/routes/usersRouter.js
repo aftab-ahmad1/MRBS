@@ -12,12 +12,13 @@ const {
   updateUser,
   removeUser,
   getUser,
+  getUsers,
 } = require("../validations/userValidator");
 
 /* GET users listing. */
 router.post("/create", createUser, create);
 
-router.get("/get-all", getAll);
+router.get("/get-all", getUsers, getAll);
 
 router.get("/get", getUser, get);
 

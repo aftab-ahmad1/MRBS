@@ -1,10 +1,22 @@
 const joi = require("joi");
+const responseHandler = require("../responseHandler");
 
 const createValidation = joi.object({
   name: joi.string().min(3).max(34),
   username: joi.string().min(6).max(34).required(),
   email: joi.string().email(),
   password: joi.string().min(8).max(18).required(),
+  CNIC: joi.string().min(11).max(15).required(),
+});
+const getAllValidation = joi.object({
+  pageNo: joi.number().min(1).default(1).required(),
+  limit: joi.number().valid(5, 10, 15).default(5).required(),
+  order: joi.string().valid("ASC", "DESC"),
+  orderBy: joi.string().valid("createdAt", "username", "email", "name"),
+  name: joi.string().min(3).max(34),
+  username: joi.string().min(6).max(34),
+  email: joi.string().email(),
+  CNIC: joi.string().min(11).max(15),
 });
 const getValidation = joi.object({
   userID: joi.string().max(64).required(),
@@ -24,12 +36,7 @@ const createUser = async (req, res, next) => {
     await createValidation.validateAsync(req.body);
     next();
   } catch (error) {
-    return res.send({
-      status: 400,
-      message: "Validation Error",
-      data: {},
-      error: error.message,
-    });
+    return responseHandler(res, { error: error.message });
   }
 };
 const getUser = async (req, res, next) => {
@@ -37,12 +44,15 @@ const getUser = async (req, res, next) => {
     await getValidation.validateAsync(req.query);
     next();
   } catch (error) {
-    return res.send({
-      status: 400,
-      message: "Validation Error",
-      data: {},
-      error: error.message,
-    });
+    return responseHandler(res, { error: error.message });
+  }
+};
+const getUsers = async (req, res, next) => {
+  try {
+    await getAllValidation.validateAsync(req.query);
+    next();
+  } catch (error) {
+    return responseHandler(res, { error: error.message });
   }
 };
 const updateUser = async (req, res, next) => {
@@ -50,12 +60,7 @@ const updateUser = async (req, res, next) => {
     await updateValidation.validateAsync(req.body);
     next();
   } catch (error) {
-    return res.send({
-      status: 400,
-      message: "Validation Error",
-      data: {},
-      error: error.message,
-    });
+    return responseHandler(res, { error: error.message });
   }
 };
 const removeUser = async (req, res, next) => {
@@ -63,12 +68,13 @@ const removeUser = async (req, res, next) => {
     await removeValidation.validateAsync(req.query);
     next();
   } catch (error) {
-    return res.send({
-      status: 400,
-      message: "Validation Error",
-      data: {},
-      error: error.message,
-    });
+    return responseHandler(res, { error: error.message });
   }
 };
-module.exports = { createUser, updateUser, removeUser, getUser };
+module.exports = {
+  createUser,
+  updateUser,
+  removeUser,
+  getUser,
+  getUsers,
+};
