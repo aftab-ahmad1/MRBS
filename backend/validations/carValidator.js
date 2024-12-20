@@ -3,10 +3,16 @@ const responseHandler = require("../responseHandler");
 
 const createValidation = joi.object({
   name: joi.string().min(3).max(34),
-  username: joi.string().min(6).max(34).required(),
-  email: joi.string().email(),
-  password: joi.string().min(8).max(18).required(),
-  CNIC: joi.string().min(11).max(15).required(),
+  brand: joi.string().min(3).max(34),
+  type: joi.string().min(3).max(34),
+  model: joi.string().min(3).max(34),
+  carNo: joi.string().min(3).max(34).required(),
+  engine: joi.string().min(3).max(34),
+  gearBox: joi.string().min(3).max(34),
+  fuel: joi.string().min(3).max(34),
+  seats: joi.number(),
+  airConditioner: joi.string().min(2).max(3),
+  price: joi.number(),
 });
 const getAllValidation = joi.object({
   pageNo: joi.number().min(1).default(1).required(),
@@ -14,25 +20,32 @@ const getAllValidation = joi.object({
   order: joi.string().valid("ASC", "DESC"),
   orderBy: joi.string().valid("createdAt", "username", "email", "name"),
   name: joi.string().min(3).max(34),
-  username: joi.string().min(6).max(34),
-  email: joi.string().email(),
-  CNIC: joi.string().min(11).max(15),
+  carNo: joi.string().min(3).max(34),
+  brand: joi.string().min(3).max(34),
 });
 const getValidation = joi.object({
-  userID: joi.string().max(64).required(),
-  username: joi.string().max(34).required(),
+  carID: joi.string().max(64).required(),
+  carNo: joi.string().max(34).required(),
 });
 const updateValidation = joi.object({
-  userID: joi.string().max(64).required(),
+  carID: joi.string().max(64).required(),
   name: joi.string().min(3).max(34),
-  username: joi.string().min(6).max(34).required(),
-  email: joi.string().email(),
+  brand: joi.string().min(3).max(34),
+  type: joi.string().min(3).max(34),
+  model: joi.string().min(3).max(34),
+  carNo: joi.string().min(3).max(34).required(),
+  engine: joi.string().min(3).max(34),
+  gearBox: joi.string().min(3).max(34),
+  fuel: joi.string().min(3).max(34),
+  seats: joi.number(),
+  airConditioner: joi.string().min(2).max(3),
+  price: joi.number(),
 });
 const removeValidation = joi.object({
-  username: joi.string().min(6).max(34).required(),
+  carNo: joi.string().min(3).max(34).required(),
 });
 
-const createUser = async (req, res, next) => {
+const createCar = async (req, res, next) => {
   try {
     await createValidation.validateAsync(req.body);
     next();
@@ -40,7 +53,7 @@ const createUser = async (req, res, next) => {
     return responseHandler(res, { error: error.message });
   }
 };
-const getUser = async (req, res, next) => {
+const getCar = async (req, res, next) => {
   try {
     await getValidation.validateAsync(req.query);
     next();
@@ -48,7 +61,7 @@ const getUser = async (req, res, next) => {
     return responseHandler(res, { error: error.message });
   }
 };
-const getUsers = async (req, res, next) => {
+const getCars = async (req, res, next) => {
   try {
     await getAllValidation.validateAsync(req.query);
     next();
@@ -56,7 +69,7 @@ const getUsers = async (req, res, next) => {
     return responseHandler(res, { error: error.message });
   }
 };
-const updateUser = async (req, res, next) => {
+const updateCar = async (req, res, next) => {
   try {
     await updateValidation.validateAsync(req.body);
     next();
@@ -64,7 +77,7 @@ const updateUser = async (req, res, next) => {
     return responseHandler(res, { error: error.message });
   }
 };
-const removeUser = async (req, res, next) => {
+const removeCar = async (req, res, next) => {
   try {
     await removeValidation.validateAsync(req.query);
     next();
@@ -73,9 +86,9 @@ const removeUser = async (req, res, next) => {
   }
 };
 module.exports = {
-  createUser,
-  updateUser,
-  removeUser,
-  getUser,
-  getUsers,
+  createCar,
+  updateCar,
+  removeCar,
+  getCar,
+  getCars,
 };

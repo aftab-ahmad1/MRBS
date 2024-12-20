@@ -1,26 +1,27 @@
 const { models } = require("../index");
 
 module.exports = {
-  createUser: async (body) => {
+  createCar: async (body) => {
     try {
       const data = await models.users.create({ ...body });
       return {
         data: data,
       };
     } catch (error) {
+      console.log("check", error);
       return { error: error.error[0].message };
     }
   },
-  getAllUser: async (offset, query) => {
+  getAllCars: async (offset, query) => {
     try {
       const data = await models.users.findAndCountAll({
         where: {
           ...(query.name ? { name: query.name } : true),
-          ...(query.username ? { username: query.username } : true),
-          ...(query.email ? { email: query.email } : true),
+          ...(query.carNo ? { carNo: query.carNo } : true),
+          ...(query.brnad ? { brand: query.brand } : true),
         },
         attributes: {
-          exclude: ["password", "deletedAt"],
+          exclude: ["deletedAt"],
         },
         offset: offset,
         limit: query.limit,
@@ -38,16 +39,14 @@ module.exports = {
       return { error: error.error[0].message };
     }
   },
-  getUser: async ({ userID, username }) => {
+  getCar: async ({ carID, carNo }) => {
     try {
       const data = await models.users.findOne({
         where: {
-          ...(username == "false"
-            ? { userID: userID }
-            : { username: username }),
+          ...(carNo == "false" ? { carID: carID } : { carNo: carNo }),
         },
         attributes: {
-          exclude: ["password", "deletedAt"],
+          exclude: ["deletedAt"],
         },
       });
       return {
@@ -57,13 +56,13 @@ module.exports = {
       return { error: error.error[0].message };
     }
   },
-  updateUser: async ({ userID, ...body }) => {
+  updateCar: async ({ carID, ...body }) => {
     try {
       const data = await models.users.update(
         { ...body },
         {
           where: {
-            userID: userID,
+            carID: carID,
           },
         }
       );
@@ -74,11 +73,11 @@ module.exports = {
       return { error: error.error[0].message };
     }
   },
-  deleteUser: async ({ username }) => {
+  deleteCar: async ({ carNo }) => {
     try {
       const data = await models.users.destroy({
         where: {
-          username: username,
+          carNo: carNo,
         },
       });
       return {

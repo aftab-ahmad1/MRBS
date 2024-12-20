@@ -1,15 +1,15 @@
 const {
-  createUser,
-  getAllUser,
-  getUser,
-  updateUser,
-  deleteUser,
-} = require("../database/models/userModel");
+  createCar,
+  getAllCars,
+  getCar,
+  updateCar,
+  deleteCar,
+} = require("../database/models/carModels");
 const responseHandler = require("../responseHandler");
 
 const create = async (req, res) => {
   try {
-    const user = await createUser(req.body);
+    const user = await createCar(req.body);
     return responseHandler(res, user);
   } catch (error) {
     return responseHandler(res, { error: error.message });
@@ -19,7 +19,7 @@ const getAll = async (req, res) => {
   try {
     const { pageNo, limit } = req.query;
     const offset = (pageNo - 1) * limit;
-    const user = await getAllUser(offset, req.query);
+    const user = await getAllCars(offset, req.query);
     return responseHandler(res, user);
   } catch (error) {
     return responseHandler(res, { error: error.message });
@@ -27,7 +27,7 @@ const getAll = async (req, res) => {
 };
 const get = async (req, res) => {
   try {
-    const user = await getUser(req.query);
+    const user = await getCar(req.query);
     return responseHandler(res, user);
   } catch (error) {
     return responseHandler(res, { error: error.message });
@@ -35,7 +35,7 @@ const get = async (req, res) => {
 };
 const update = async (req, res) => {
   try {
-    const user = await updateUser(req.body);
+    const user = await updateCar(req.body);
     return responseHandler(res, user);
   } catch (error) {
     return responseHandler(res, { error: error.message });
@@ -43,7 +43,7 @@ const update = async (req, res) => {
 };
 const remove = async (req, res) => {
   try {
-    const user = await deleteUser(req.query);
+    const user = await deleteCar(req.query);
     return responseHandler(res, user);
   } catch (error) {
     return responseHandler(res, { error: error.message });
