@@ -12,7 +12,7 @@ module.exports = (res, result) => {
     return res.send({
       status: 400,
       data: {},
-      error: error,
+      error: error.message,
     });
   }
 };
