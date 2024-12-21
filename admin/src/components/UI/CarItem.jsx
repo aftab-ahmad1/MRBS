@@ -1,7 +1,7 @@
 import React from "react";
 
 const CarItem = (props) => {
-  const { category, type, rentPrice, imgUrl, carName, groupSize } = props.item;
+  const { category, gear, rentPrice, imgUrl, carName, groupSize } = props.item;
   return (
     <div className="car__item">
       <div className="car__item-top">
@@ -25,7 +25,7 @@ const CarItem = (props) => {
           </p>
           <p>
             <i class="ri-repeat-line"></i>
-            {type}
+            {gear}
           </p>
         </div>
 

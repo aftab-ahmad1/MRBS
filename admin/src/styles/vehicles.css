@@ -1,0 +1,156 @@
+.bookings {
+  margin-top: 100px;
+
+  padding: 0px 30px;
+  padding-bottom: 50px;
+}
+
+.booking__title {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.filter__widget-wrapper {
+  display: flex;
+  /* align-items: center; */
+  column-gap: 1.5rem;
+  /* border:#fff solid 1px; */
+  /* flex-direction: row; */
+  justify-content: space-between;
+
+}
+.filter__widget_left{
+  display: flex;
+  /* align-items: center; */
+  /* column-gap: 1.5rem; */
+  /* border:#fff solid 1px; */
+  /* flex-direction: row; */
+  gap: 2rem;
+}
+
+.filter__widget-01 select,
+.filter__widget-02 select {
+  border: none;
+  padding: 7px 20px;
+  /* padding-right: 1rem; */
+  border-radius: 50px;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  /* border:red solid 1px; */
+}
+.filter__widget {
+  border: none;
+  padding: 7px 20px;
+  border-radius: 50px;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  /* border:red solid 1px; */
+  align-self: flex-end;
+}
+.btn_add_vehicle{
+  border: none;
+  padding: 7px 20px;
+  border-radius: 50px;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  letter-spacing: 0.2rem;
+  align-self: flex-end;
+  font-weight: 00;
+  font-size: large;
+}
+.btn_add_vehicle:hover{
+  background: #fff;
+  color: var(--primary-color);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+/* ========================================================== */
+
+
+.booking__car-list {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 2rem; 
+}
+
+.car__item {
+  display: grid; 
+  grid-template-rows: auto 1fr auto; 
+  gap: 1rem; 
+  padding: 20px;
+  border-radius: 5px;
+  background: var(--primary-color);
+  cursor: pointer;
+}
+.car__item:hover {
+  transform: scale(1.03);
+  transition: all 0.3s ease;
+}
+
+.car__item-top {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.car__item-tile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.car__item-tile h3 {
+  font-size: 1.3rem;
+  color: var(--heading-color);
+  font-weight: 400;
+}
+
+.car__item-top p {
+  color: var(--small-text-color);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.car__img {
+  justify-self: center; 
+}
+.car__img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+} 
+
+.car__img img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.car__item-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car__bottom-left {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.car__bottom-left p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.829);
+  font-weight: 300 !important;
+}
+
+.car__rent {
+  color: rgba(255, 255, 255, 0.829);
+  font-size: 1.1rem;
+}
