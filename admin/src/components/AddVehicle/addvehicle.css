@@ -1,0 +1,59 @@
+.add-vehicle {
+    padding: 20px;
+    background-color: #2c2c44;
+    border-radius: 8px;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .back-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-button {
+    grid-column: span 2; /* Span the button across both columns */
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
