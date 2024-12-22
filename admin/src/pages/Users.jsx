@@ -1,9 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import sellCar from "../assets/images/sell-car.png";
 import "../styles/users.css";
-import TrackingChart from "../charts/TrackingChart";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-//import axios from "axios";
 import axios from "axios";
 import { GlobalContext } from "./GlobalProvider";
 import AddUser from "../components/AddUser/AddUser";
@@ -15,14 +12,14 @@ const Users = () => {
     // console.log("addUser  is true") ;
     // alert("addUser  is true");
   }
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = await axios.get("localhost:3000/users/get-all");
-  //     setDataArray(response.data);
-  //     console.log(response);
-  //   };
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("localhost:3001/users/get-all");
+      setDataArray(response.data);
+      console.log(response);
+    };
+    fetchData();
+  }, []);
   return (
     <>
     <div className="sell__car">
