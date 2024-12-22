@@ -1,0 +1,105 @@
+.sell__car {
+  margin-top: 100px;
+  padding: 0px 30px;
+  padding-bottom: 50px;
+}
+.sell__car-title {
+  margin-bottom: 2rem;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn_add_user{
+  border: none;
+  padding: 7px 20px;
+  border-radius: 50px;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  letter-spacing: 0.2rem;
+  align-self: flex-end;
+  font-weight: 00;
+  font-size: large;
+}
+.btn_add_user:hover{
+  background: #fff;
+  color: var(--primary-color);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* ============================================ */
+.user_card{
+  background: var(--primary-color);
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: lightgray;
+  display: flex;
+}
+.user_card__left{
+  width: 20%;
+  /* height: 8rem; */
+  /* border:#2884ff 1px solid; */
+}
+.user_card__left img:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.3s ease;  
+}
+.columns{
+  width: 100%;
+  /* background-color:none; */
+  color: lightgray;
+}
+.user_card__right{
+  width: 80%;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid #333; */
+}
+.user_card__info{
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-evenly;
+  /* border:#2884ff 1px solid; */
+}
+.user_card__progress{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  justify-content: end;
+  gap: 1rem;
+  /* border: 1px solid #333; */
+}
+.btn_user{
+  /* background: #2884ff; */
+  /* color: white; */
+  background-color: lightgray;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1px;
+  font-weight:300;
+  font-size: large;
+}
+.btn_user:hover{
+  background: #fff;
+  color: var(--primary-color);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+} 

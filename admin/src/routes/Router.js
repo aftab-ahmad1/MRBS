@@ -5,9 +5,12 @@ import Dashboard from "../pages/Dashboard";
 import Users from "../pages/Users";
 import Booking from "../pages/Booking";
 import Vehicles from "../pages/Vehicles";
+import GlobalProvider from "../pages/GlobalProvider";
 
 const Router = () => {
   return (
+    <>
+    <GlobalProvider>
     <Routes>
       <Route
         path="/"
@@ -18,6 +21,8 @@ const Router = () => {
       <Route path="/users" element={<Users />} />
       <Route path="/booking" element={<Booking />} />
     </Routes>
+    </GlobalProvider>
+    </>
   );
 };
 
