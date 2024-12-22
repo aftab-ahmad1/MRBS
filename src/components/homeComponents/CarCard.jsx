@@ -1,10 +1,10 @@
-const CarCard = ({ picture, name, type, price, features }) => {
+const CarCard = ({ name, type, price }) => {
   return (
     <div className="border rounded-lg shadow-lg p-4 bg-white transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
       {/* Car Image Placeholder */}
       <div className="h-40 bg-gray-200 rounded mb-4 flex items-center justify-center overflow-hidden">
         <img
-          src={picture}
+          src=""
           alt="Car"
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
         />
@@ -19,13 +19,13 @@ const CarCard = ({ picture, name, type, price, features }) => {
       </div>
 
       {/* Features */}
-      <div className="text-sm text-gray-500 flex flex-wrap gap-2 mb-4">
+      {/* <div className="text-sm text-gray-500 flex flex-wrap gap-2 mb-4">
         {features.map((feature, index) => (
           <span key={index} className="flex items-center gap-1">
             {feature.icon} {feature.label}
           </span>
         ))}
-      </div>
+      </div> */}
 
       {/* View Details Button */}
       <button className="bg-purple-600 text-white py-2 px-4 rounded-lg w-full transition-colors duration-300 hover:bg-purple-700">

@@ -1,12 +1,34 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import CarCard from "../components/homeComponents/CarCard";
 import DownloadAppSection from "../components/homeComponents/DownloadAppSection";
 import FactsSection from "../components/homeComponents/FactsStation";
 import Features from "../components/homeComponents/Features";
 import HeroSearchSection from "../components/homeComponents/HeroSearchSection";
-import { cars } from "../data/carData";
 import Booking from "../components/homeComponents/Booking";
 
 const HomePage = () => {
+  const [cars, setCars] = useState([]); // State to store car data
+  const [error, setError] = useState(null); // State for error handling
+  const [loading, setLoading] = useState(true); // State for loading status
+  useEffect(() => {
+    const fetchCars = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:3001/cars/get-all?pageNo=1&limit=5"
+        ); // Replace with your API endpoint
+        console.log(response.data);
+        setCars(response.data.data.rows); // Set the fetched data
+        setLoading(false); // Set loading to false
+      } catch (err) {
+        setError(err.message); // Handle errors
+        setLoading(false);
+      }
+    };
+
+    fetchCars();
+  }, []); // Empty dependency array ensures this runs once when the component mounts
+
   return (
     <>
       <Booking />
@@ -24,14 +46,14 @@ const HomePage = () => {
           </button>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {cars.map((car, index) => (
+          {cars.map((car) => (
             <CarCard
-              key={index}
-              picture={car.picture}
+              key={car.carID} // Use carID or index as key
+              //picture={car.picture} // Ensure `picture` exists in the backend response
               name={car.name}
               type={car.type}
               price={car.price}
-              features={car.features}
+              //features={car.features || []}
             />
           ))}
         </div>

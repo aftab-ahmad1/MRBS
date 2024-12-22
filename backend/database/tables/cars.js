@@ -20,15 +20,15 @@ cars.init(
       allowNull: false,
     },
     type: {
-      type: DataTypes.STRING(1000),
+      type: DataTypes.STRING(10),
       allowNull: false,
     },
     model: {
-      type: DataTypes.STRING(1000),
+      type: DataTypes.STRING(10),
       allowNull: false,
     },
     carNo: {
-      type: DataTypes.STRING(1000),
+      type: DataTypes.STRING(10),
       allowNull: false,
       unique: true,
     },
@@ -37,19 +37,19 @@ cars.init(
       allowNull: false,
     },
     gearBox: {
-      type: DataTypes.STRING(1000),
+      type: DataTypes.STRING(20),
       allowNull: false,
     },
     fuel: {
-      type: DataTypes.STRING(1000),
+      type: DataTypes.STRING(10),
       allowNull: false,
     },
     seats: {
-      type: DataTypes.STRING(1000),
+      type: DataTypes.STRING(10),
       allowNull: false,
     },
     airConditioner: {
-      type: DataTypes.STRING(1000),
+      type: DataTypes.STRING(10),
       allowNull: false,
     },
     price: {
