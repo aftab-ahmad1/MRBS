@@ -47,11 +47,14 @@
   width: 20%;
   /* height: 8rem; */
   /* border:#2884ff 1px solid; */
+  border: 1px solid rgba(199, 199, 199, .1);
+  border-radius: 5px;
 }
 .user_card__left img:hover{
   cursor: pointer;
   transform: scale(1.1);
   transition: all 0.3s ease;  
+  /* border: #fff    1px solid; */
 }
 .columns{
   width: 100%;

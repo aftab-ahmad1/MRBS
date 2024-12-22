@@ -57,7 +57,7 @@ const Users = () => {
             {dataArray.map((item, index) => (
               <div key={index} className="user_card">
                 <div className="user_card__left">
-                  <img src={sellCar} alt="" />
+                  <img src={item.picture} alt="" />
                 </div>
                 <div className="user_card__right">
                   <div className="user_card__info">
