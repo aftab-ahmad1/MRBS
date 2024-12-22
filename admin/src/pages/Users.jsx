@@ -8,6 +8,7 @@ import AddUser from "../components/AddUser/AddUser";
 const Users = () => {
   const [dataArray, setDataArray] = useState([]);
   const { addUser, setAddUser } = useContext(GlobalContext);
+  const baseUrl = "http://localhost:3001";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,7 +58,7 @@ const Users = () => {
             {dataArray.map((item, index) => (
               <div key={index} className="user_card">
                 <div className="user_card__left">
-                  <img src={item.picture} alt="" />
+                <img src="" alt="" />
                 </div>
                 <div className="user_card__right">
                   <div className="user_card__info">
