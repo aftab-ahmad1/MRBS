@@ -7,7 +7,7 @@ const createValidation = joi.object({
   type: joi.string().min(3).max(34),
   model: joi.string().min(3).max(34),
   carNo: joi.string().min(3).max(34).required(),
-  engine: joi.string().min(3).max(34),
+  engine: joi.string().max(34),
   gearBox: joi.string().min(3).max(34),
   fuel: joi.string().min(3).max(34),
   seats: joi.number(),
@@ -18,13 +18,13 @@ const getAllValidation = joi.object({
   pageNo: joi.number().min(1).default(1).required(),
   limit: joi.number().valid(5, 10, 15).default(5).required(),
   order: joi.string().valid("ASC", "DESC"),
-  orderBy: joi.string().valid("createdAt", "username", "email", "name"),
+  orderBy: joi.string().valid("createdAt", "brand", "carNo", "name"),
   name: joi.string().min(3).max(34),
   carNo: joi.string().min(3).max(34),
   brand: joi.string().min(3).max(34),
 });
 const getValidation = joi.object({
-  carID: joi.string().max(64).required(),
+  carID: joi.string().max(64),
   carNo: joi.string().max(34).required(),
 });
 const updateValidation = joi.object({

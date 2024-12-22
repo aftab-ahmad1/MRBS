@@ -15,7 +15,7 @@ const {
   getCars,
 } = require("../validations/carValidator");
 
-/* GET users listing. */
+/* GET car listing. */
 router.post("/create", createCar, create);
 
 router.get("/get-all", getCars, getAll);

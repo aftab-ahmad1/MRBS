@@ -3,7 +3,7 @@ import sellCar from "../assets/images/sell-car.png";
 import "../styles/sell-car.css";
 import TrackingChart from "../charts/TrackingChart";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import axios from "axios";
+//import axios from "axios";
 
 const Users = () => {
   const [dataArray, setDataArray] = useState([]);
@@ -21,18 +21,13 @@ const Users = () => {
         <h2 className="sell__car-title">Users</h2>
 
         <div className="columns">
-            <div className="user_card__info">
-              <h3>ProfilePic</h3>
-              <h3>UserName</h3>
-              <h3>Email</h3>
-              <h3>CNIC</h3>
-            </div>
+          <div className="user_card__info">
+            <h3>ProfilePic</h3>
+            <h3>UserName</h3>
+            <h3>Email</h3>
+            <h3>CNIC</h3>
           </div>
-
-
-
-
-
+        </div>
 
         <div className="user_card">
           <div className="user_card__left">

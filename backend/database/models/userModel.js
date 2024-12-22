@@ -46,9 +46,7 @@ module.exports = {
             ? { userID: userID }
             : { username: username }),
         },
-        attributes: {
-          exclude: ["password", "deletedAt"],
-        },
+        paranoid: false,
       });
       return {
         data: data,

@@ -9,7 +9,7 @@ cars.init(
     carID: {
       type: DataTypes.STRING(80),
       primaryKey: true,
-      autoIncrement: true,
+      //autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING(34),
@@ -63,7 +63,7 @@ cars.init(
   }
 );
 cars.beforeCreate(async (car) => {
-  car.userID = uuid();
+  car.carID = uuid();
 });
 
-module.exports = { users };
+module.exports = { cars };

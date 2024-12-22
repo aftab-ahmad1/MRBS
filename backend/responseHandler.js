@@ -1,7 +1,7 @@
 module.exports = (res, result) => {
   try {
     if (result.error) {
-      throw error;
+      throw result.error;
     }
     return res.send({
       status: 200,

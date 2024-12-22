@@ -1,23 +1,24 @@
 const { models } = require("../index");
 
 module.exports = {
-  createCar: async (body) => {
+  createBooking: async (body) => {
+    console.log("Model check");
     try {
-      const data = await models.cars.create({ ...body });
+      const data = await models.bookings.create({ ...body });
       return {
         data: data,
       };
     } catch (error) {
+      console.log("Model check", error);
       return { error: error.error[0].message };
     }
   },
-  getAllCars: async (offset, query) => {
+  getAllBookings: async (offset, query) => {
     try {
-      const data = await models.cars.findAndCountAll({
+      const data = await models.bookings.findAndCountAll({
         where: {
-          ...(query.name ? { name: query.name } : true),
-          ...(query.carNo ? { carNo: query.carNo } : true),
-          ...(query.brnad ? { brand: query.brand } : true),
+          ...(query.bookingID ? { bookingID: query.bookingID } : true),
+          ...(query.status ? { status: query.status } : true),
         },
         attributes: {
           exclude: ["deletedAt"],
@@ -35,14 +36,18 @@ module.exports = {
         data: data,
       };
     } catch (error) {
+      console.log("check", error);
       return { error: error.error[0].message };
     }
   },
-  getCar: async ({ carID, carNo }) => {
+  getBooking: async ({ bookingID }) => {
     try {
-      const data = await models.cars.findOne({
+      const data = await models.bookings.findOne({
         where: {
-          ...(carNo == "false" ? { carID: carID } : { carNo: carNo }),
+          bookingID: bookingID,
+          //   ...(status == "false"
+          //     ? { bookingID: bookingID }
+          //     : { status: status }),
         },
         attributes: {
           exclude: ["deletedAt"],
@@ -55,13 +60,13 @@ module.exports = {
       return { error: error.error[0].message };
     }
   },
-  updateCar: async ({ carID, ...body }) => {
+  updateBooking: async ({ bookingID, ...body }) => {
     try {
-      const data = await models.cars.update(
+      const data = await models.bookings.update(
         { ...body },
         {
           where: {
-            carID: carID,
+            bookingID: bookingID,
           },
         }
       );
@@ -72,11 +77,11 @@ module.exports = {
       return { error: error.error[0].message };
     }
   },
-  deleteCar: async ({ carNo }) => {
+  deleteBooking: async ({ bookingID }) => {
     try {
-      const data = await models.cars.destroy({
+      const data = await models.bookings.destroy({
         where: {
-          carNo: carNo,
+          bookingID: bookingID,
         },
       });
       return {
