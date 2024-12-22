@@ -34,6 +34,18 @@ users.init(
       type: DataTypes.STRING(15),
       //allowNull: false,
     },
+    phoneNo: {
+      type: DataTypes.STRING(11),
+    },
+    address: {
+      type: DataTypes.STRING(34),
+    },
+    city: {
+      type: DataTypes.STRING(15),
+    },
+    picture: {
+      type: DataTypes.STRING,
+    },
   },
   {
     paranoid: true,

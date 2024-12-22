@@ -10,9 +10,12 @@ var carsRouter = require("./routes/carsRouter");
 var bookingsRouter = require("./routes/bookingsRouter");
 var authRouter = require("./routes/authRouter");
 
-const cors=require("cors");
+const cors = require("cors");
 var app = express();
-app.use(cors());  
+app.use(cors());
+
+// Serve uploaded images
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

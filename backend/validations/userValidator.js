@@ -7,6 +7,10 @@ const createValidation = joi.object({
   email: joi.string().email(),
   password: joi.string().min(8).max(18).required(),
   CNIC: joi.string().min(11).max(15).required(),
+  phoneNo: joi.string().min(11).max(11).required(),
+  address: joi.string().min(5).max(34),
+  city: joi.string().min(3).max(20),
+  picture: joi.string().min(3).max(50),
 });
 const getAllValidation = joi.object({
   pageNo: joi.number().min(1).default(1).required(),
