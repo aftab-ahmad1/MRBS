@@ -24,6 +24,7 @@ const Users = () => {
   //   fetchData();
   // }, []);
   return (
+    <>
     <div className="sell__car">
       <div className="sell__car-wrapper">
         {!addUser ? (
@@ -67,6 +68,7 @@ const Users = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 
