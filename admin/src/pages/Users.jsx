@@ -18,7 +18,11 @@ const Users = () => {
         console.log("API Response:", response.data);
 
         // Access the rows array from response.data
-        if (response.data && response.data.data && Array.isArray(response.data.data.rows)) {
+        if (
+          response.data &&
+          response.data.data &&
+          Array.isArray(response.data.data.rows)
+        ) {
           setDataArray(response.data.data.rows);
         } else {
           console.error("Invalid API response structure");
@@ -37,10 +41,7 @@ const Users = () => {
           <>
             <div className="top">
               <h2 className="sell__car-title">Users</h2>
-              <button
-                className="btn_add_user"
-                onClick={() => setAddUser(true)}
-              >
+              <button className="btn_add_user" onClick={() => setAddUser(true)}>
                 ADD
               </button>
             </div>
@@ -57,7 +58,8 @@ const Users = () => {
             {dataArray.map((item, index) => (
               <div key={index} className="user_card">
                 <div className="user_card__left">
-                  <img src={item.picture} alt="" />
+                  {console.log("item picture", item.picture)}
+                  <img src={item.picture} alt="abc" />
                 </div>
                 <div className="user_card__right">
                   <div className="user_card__info">

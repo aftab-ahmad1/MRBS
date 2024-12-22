@@ -20,9 +20,10 @@ const create = async (req, res) => {
     // Extract the body and file path
     const { body } = req;
     const picturePath = req.file ? `/uploads/${req.file.filename}` : null;
+    const fullUrl = `${req.protocol}://${req.get("host")}${picturePath}`;
 
     // Add picture to the body
-    const user = await createUser({ ...body, picture: picturePath });
+    const user = await createUser({ ...body, picture: fullUrl });
 
     return responseHandler(res, user);
   } catch (error) {
