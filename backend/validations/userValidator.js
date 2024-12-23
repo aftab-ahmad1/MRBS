@@ -10,7 +10,7 @@ const createValidation = joi.object({
   phoneNo: joi.string().min(11).max(11).required(),
   address: joi.string().min(5).max(34),
   city: joi.string().min(3).max(20),
-  picture: joi.string().min(3).max(50),
+  //picture: joi.string().min(3).max(50),
 });
 const getAllValidation = joi.object({
   pageNo: joi.number().min(1).default(1).required(),
@@ -41,6 +41,7 @@ const createUser = async (req, res, next) => {
     await createValidation.validateAsync(req.body);
     next();
   } catch (error) {
+    console.log("check", error);
     return responseHandler(res, { error: error.message });
   }
 };

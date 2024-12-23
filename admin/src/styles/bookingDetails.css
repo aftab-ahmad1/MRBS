@@ -1,0 +1,53 @@
+.booking-details {
+    padding: 20px;
+    background-color: #2c2c44;
+    border-radius: 8px;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 5rem;
+    color: white;
+  }
+  
+  .booking-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .booking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .booking-card {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #1e1e2f;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .booking-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  .status-booked {
+    color: #28a745; /* Green for booked */
+    font-weight: bold;
+  }
+  
+  .status-canceled {
+    color: #dc3545; /* Red for canceled */
+    font-weight: bold;
+  }
+  
+  .no-bookings {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ffffff;
+  }
+  
