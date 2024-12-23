@@ -1,37 +1,40 @@
 import React from "react";
 
 const CarItem = (props) => {
-  const { category, gear, rentPrice, imgUrl, carName, groupSize } = props.item;
+  const { name, type,gearBox, price, imgUrl, seats } = props.item;
   return (
+    <>
     <div className="car__item">
       <div className="car__item-top">
         <div className="car__item-tile">
-          <h3>{carName}</h3>
+          <h3>{name}</h3>
           <span>
             <i class="ri-heart-line"></i>
           </span>
         </div>
-        <p>{category}</p>
+        <p>{type}</p>
       </div>
 
       <div className="car__img">
-        <img src={imgUrl} alt="" />
+        <img src={imgUrl} alt="car picture" />
       </div>
 
       <div className="car__item-bottom">
         <div className="car__bottom-left">
           <p>
-            <i class="ri-user-line"></i> {groupSize}
+            <i class="ri-user-line"></i> {seats}
           </p>
           <p>
             <i class="ri-repeat-line"></i>
-            {gear}
+            {gearBox}
           </p>
         </div>
 
-        <p className="car__rent">${rentPrice}/d</p>
+        <p className="car__rent">${price}/d</p>
       </div>
     </div>
+    
+    </>
   );
 };
 
