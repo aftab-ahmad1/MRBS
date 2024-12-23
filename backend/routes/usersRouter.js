@@ -40,7 +40,8 @@ const upload = multer({
 
 /* User Routes */
 
-router.post("/create", upload.single("picture"), createUser, create);
+// router.post("/create", upload.single("picture"), createUser, create);
+router.post("/create", createUser, create);
 
 // Route for getting all users
 router.get("/get-all", getUsers, getAll);

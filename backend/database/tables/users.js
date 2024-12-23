@@ -43,9 +43,9 @@ users.init(
     city: {
       type: DataTypes.STRING(15),
     },
-    picture: {
-      type: DataTypes.STRING,
-    },
+    // picture: {
+    //   type: DataTypes.STRING,
+    // },
   },
   {
     paranoid: true,
