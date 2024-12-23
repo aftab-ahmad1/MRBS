@@ -8,6 +8,7 @@ module.exports = {
         data: data,
       };
     } catch (error) {
+      console.log("model check", error);
       return { error: error.error[0].message };
     }
   },
