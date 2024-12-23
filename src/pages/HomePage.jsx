@@ -9,8 +9,6 @@ import Booking from "../components/homeComponents/Booking";
 
 const HomePage = () => {
   const [cars, setCars] = useState([]); // State to store car data
-  const [error, setError] = useState(null); // State for error handling
-  const [loading, setLoading] = useState(true); // State for loading status
   useEffect(() => {
     const fetchCars = async () => {
       try {
@@ -19,15 +17,13 @@ const HomePage = () => {
         ); // Replace with your API endpoint
         console.log(response.data);
         setCars(response.data.data.rows); // Set the fetched data
-        setLoading(false); // Set loading to false
       } catch (err) {
-        setError(err.message); // Handle errors
-        setLoading(false);
+        console.error(err.message); // Handle errors
       }
     };
 
     fetchCars();
-  }, []); // Empty dependency array ensures this runs once when the component mounts
+  }, []);
 
   return (
     <>
@@ -49,6 +45,8 @@ const HomePage = () => {
           {cars.map((car) => (
             <CarCard
               key={car.carID} // Use carID or index as key
+              carID={car.carID} // Use carID or index as key
+              carNo={car.carNo}
               //picture={car.picture} // Ensure `picture` exists in the backend response
               name={car.name}
               type={car.type}

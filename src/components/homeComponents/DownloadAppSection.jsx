@@ -1,5 +1,3 @@
-import React from "react";
-
 const DownloadAppSection = () => {
   return (
     <div className="bg-white py-16 px-6">
@@ -36,12 +34,12 @@ const DownloadAppSection = () => {
 
         {/* Right Content (Phone Mockups) */}
         <div className="relative mt-10 lg:mt-0 lg:ml-10">
-            <img
-              src="https://png.pngtree.com/png-vector/20240314/ourmid/pngtree-two-mobile-phones-with-a-clean-screen-png-image_11958557.png"
+          <img
+            src="https://png.pngtree.com/png-vector/20240314/ourmid/pngtree-two-mobile-phones-with-a-clean-screen-png-image_11958557.png"
             //   src="https://via.placeholder.com/200x400"
-              alt="Phone Mockup 1"
-              className="w-72"
-            />
+            alt="Phone Mockup 1"
+            className="w-72"
+          />
         </div>
       </div>
     </div>

@@ -55,7 +55,7 @@ const Header = () => {
             Vehicles
           </Link>
           <Link
-            to="details"
+            to="vehicles/details"
             className="text-gray-800 hover:text-purple-600 font-semibold"
           >
             Details
